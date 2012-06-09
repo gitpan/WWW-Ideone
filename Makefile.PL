@@ -2,6 +2,9 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+my $repo = 'https://github.com/benkasminbullock/WWW-Ideone.git';
+my $issues = "$repo/issues";
+
 WriteMakefile (
     NAME => 'WWW::Ideone',
     VERSION_FROM => 'lib/WWW/Ideone.pm',
@@ -13,5 +16,11 @@ WriteMakefile (
         'LWP::UserAgent' => 0,
         Carp => 0,
         'IO::Uncompress::Gunzip' => 0,
+    },
+    META_MERGE => {
+        resources => {
+            repository => $repo,
+            bugtracker => $issues,
+        },
     },
 );

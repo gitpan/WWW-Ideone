@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Carp;
 use IO::Uncompress::Gunzip qw/gunzip $GunzipError/;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # The version of soap which we must use to be understood by ideone.com.
 
@@ -158,7 +158,6 @@ sub run_tt
     my $tt_out;
 
     $tt->process ($input_template, $tt_vars_ref, \$tt_out);
-    $tt_out =~ s/\<!--.*?-->\s*//gms;
     return $tt_out;
 }
 
@@ -229,7 +228,6 @@ sub make_tt
     my $tt_out;
 
     $tt->process (\$ideone_request_tmpl, \%tt_vars, \$tt_out);
-    $tt_out =~ s/\<!--.*?-->\s*//gms;
     return $tt_out;
 }
 
@@ -346,8 +344,9 @@ Make a new object.
 
 =head2 user_pass
 
-Set your user name and password (you need an API password, not
-ideone.com password).
+Set your user name and password. (You need an API password, which is
+not the same thing as an ideone.com password. See
+L</http://ideone.com/api>.)
 
 =head2 send
 
