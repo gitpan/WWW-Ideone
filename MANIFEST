@@ -1,6 +1,11 @@
+build.pl
+Changes
 lib/WWW/Ideone.pm
+lib/WWW/Ideone.pod
 Makefile.PL
 MANIFEST			This list of files
+MANIFEST.SKIP
+README
 t/WWW-Ideone.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

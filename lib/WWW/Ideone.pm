@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Carp;
 use IO::Uncompress::Gunzip qw/gunzip $GunzipError/;
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # The version of soap which we must use to be understood by ideone.com.
 
@@ -317,104 +317,4 @@ sub xml_contents
 
 
 1;
-
-=head1 NAME
-
-WWW::Ideone - send a program to ideone.com
-
-=head1 SYNOPSIS
-
-    my $obj = WWW::Ideone->new ();
-    $obj->user_pass ('username', 'password');
-    # Get a list of languages
-    my %languages = $obj->get_languages ();
-    # Send your source code to Ideone.com
-    my $xml = $obj->send (command => 'createSubmission',
-                          fields => {
-                              sourceCode => 'print "hello world!\n"',
-                              language => 3,
-                              run => 'true',
-                          });
-
-=head1 METHODS
-
-=head2 new
-
-Make a new object.
-
-=head2 user_pass
-
-Set your user name and password. (You need an API password, which is
-not the same thing as an ideone.com password. See
-L</http://ideone.com/api>.)
-
-=head2 send
-
-Send a command to ideone.com.
-
-=head2 get_languages
-
-Get a list of languages in a hash.
-
-=head1 DEPENDENCIES
-
-WWW::Ideone uses the following modules for the following purposes
-
-=over
-
-=item L<Template> 
-
-to create the messages to send to ideone.com
-
-=item L<LWP::UserAgent> 
-
-to send web requests to ideone.com. 
-
-=item L<Carp>
-
-to report errors to the module user.
-
-=item L<IO::Uncompress::Gunzip>
-
-to uncompress the reply from ideone.com.
-
-=back
-
-=head1 EXPORTS
-
-WWW::Ideone exports nothing.
-
-=head1 GLOBAL VARIABLES
-
-WWW::Ideone has the following global variables:
-
-=over
-
-=item C<$soap_version>
-
-This is the version of the SOAP protocol you need to send to ideone.com.
-
-=item C<$ideone_api_url>
-
-This is the URL of the ideone.com API (Application Programming Interface).
-
-=back
-
-=head1 BUGS
-
-"Bugs" is another word for "insects".
-
-=head1 AUTHOR
-
-Ben Bullock, <bkb@cpan.org>
-
-=head1 COPYRIGHT AND LICENCE
-
-You can use this under the same terms as Perl itself.
-
-=cut
-
-
-
-
 

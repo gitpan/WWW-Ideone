@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
-my $repo = 'https://github.com/benkasminbullock/WWW-Ideone.git';
+my $repo = 'https://github.com/benkasminbullock/WWW-Ideone';
 my $issues = "$repo/issues";
 
 WriteMakefile (
@@ -23,4 +23,5 @@ WriteMakefile (
             bugtracker => $issues,
         },
     },
+    MIN_PERL_VERSION => '5.008001',
 );
