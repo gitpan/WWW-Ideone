@@ -5,3 +5,4 @@
 ^MYMETA\..*
 \.pod\.tmpl$
 ^Makefile$
+^build\.pl$

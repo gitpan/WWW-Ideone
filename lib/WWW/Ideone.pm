@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Carp;
 use IO::Uncompress::Gunzip qw/gunzip $GunzipError/;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 # The version of soap which we must use to be understood by ideone.com.
 

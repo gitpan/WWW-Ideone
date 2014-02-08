@@ -1,5 +1,9 @@
 Revision history for perl module WWW::Ideone
 
+0.04 2014-02-08
+
+* Remove bad file from distribution.
+
 0.03 2014-02-07
 
 * Add README, Changes, minimum Perl version.
